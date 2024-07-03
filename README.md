@@ -78,7 +78,7 @@ Aplicacion web de lista de tareas desarrollada con Django. Utiliza una base de d
 ## Estructura del proyecto
 
 ```plaintext
-Aplicacion/
+Tasks-App/
 ├── manage.py                # Script de Django para administrar el proyecto.
 ├── django_project/
 │   ├── __init__.py
