@@ -2,12 +2,12 @@
 
 {% block content %}
 <div class="container mt-5">
-    <h2 class="text-center">Editar Tarea</h2>
-
     <form method="POST">
         {% csrf_token %}
         <!-- Formulario -->
         <div class="card shadow p-4 mb-4 bg-light rounded">
+            <h3 class="text-center">Editar tarea</h3>
+            <hr>
             <div class="mb-3">
                 <label for="id_title" class="form-label">Título</label>
                 <input type="text" id="id_title" name="title" class="form-control" value="{{ form.title.value|default_if_none:'' }}" placeholder="Escribe el título" required>
