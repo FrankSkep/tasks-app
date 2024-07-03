@@ -7,14 +7,12 @@ def list_tasks(request):
     tasks = Task.objects.all()  # Obtener lista de todos los objetos, orm
     return render(request, 'tasks.html', {"tasks": tasks})
 
-
 # Crear una tarea
 def create_task(request):
     # Construyo objeto de la tarea con su clave-valor
     task = Task(title=request.POST['title'],
                 description=request.POST['description'])
     task.save()  # Guardo la tarea en la db
-    print(request.POST)
     return redirect('/tasks/')
 
 # Eliminar una tarea
@@ -22,7 +20,6 @@ def delete_task(request, task_id):
     task_delete = Task.objects.get(id=task_id)
     task_delete.delete()
     return redirect('/tasks/')
-
 
 # Editar una tarea
 def edit_task(request, task_id):
