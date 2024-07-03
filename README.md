@@ -1,7 +1,8 @@
-# Django Tasks App Application
+# Django Tasks App
 
 Aplicacion web de lista de tareas desarrollada con Django. Utiliza una base de datos PostgreSQL para gestionar las tareas.
 
+![ImagenInterfaz](https://raw.githubusercontent.com/FrankSkep/Tasks-App/main/tasks/static/images/interface.png)
 
 ## Características
 
