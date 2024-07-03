@@ -1,0 +1,109 @@
+# Django To-Do List Application
+
+Aplicacion web de lista de tareas desarrollada con Django. La aplicación permite agregar, ver, editar y eliminar tareas. Utiliza una base de datos PostgreSQL para gestionar las tareas.
+
+
+## Características
+
+- **Agregar Tareas**: Permite a los usuarios agregar nuevas tareas a la lista.
+- **Ver Tareas**: Los usuarios pueden ver todas las tareas en la lista.
+- **Editar Tareas**: Permite a los usuarios editar las tareas existentes.
+- **Eliminar Tareas**: Los usuarios pueden eliminar las tareas de la lista.
+
+## Requisitos
+
+- Python 3.x
+- Django 5.x o superior
+- PostgreSQL
+- psycopg2-binary (para la conexión con PostgreSQL)
+
+## Instalación
+
+1. Clona este repositorio:
+    ```sh
+    git clone https://github.com/FrankSkep/Tasks-App
+    cd django-todo-list
+    ```
+
+2. Crea un entorno virtual e instálalo:
+    ```sh
+    python -m venv venv
+    source venv/bin/activate  # En Windows usa `venv\Scripts\activate`
+    ```
+
+3. Instala las dependencias:
+    ```sh
+    pip install -r requirements.txt
+    ```
+
+4. Configura la base de datos PostgreSQL.
+    - Crea una base de datos en PostgreSQL.
+    - Configura las credenciales de la base de datos en `settings.py`:
+
+    ```python
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.postgresql',
+            'NAME': 'nombre_de_tu_base_de_datos',
+            'USER': 'tu_usuario',
+            'PASSWORD': 'tu_contraseña',
+            'HOST': 'localhost',
+            'PORT': '5432',
+        }
+    }
+    ```
+
+5. Aplica las migraciones para configurar la base de datos:
+    ```sh
+    python manage.py makemigrations
+    python manage.py migrate
+    ```
+
+
+6. Inicia el servidor de desarrollo:
+    ```sh
+    python manage.py runserver
+    ```
+
+## Uso
+
+1. Abre tu navegador web y ve a `http://127.0.0.1:8000/tasks/`.
+2. Puedes agregar, ver, editar y eliminar tareas utilizando la interfaz de usuario.
+
+## Estructura del proyecto
+
+```plaintext
+lista-de-tareas/
+├── manage.py                # Script de Django para administrar el proyecto.
+├── django_project/
+│   ├── __init__.py
+│   ├── settings.py          # Configuraciones del proyecto Django, incluyendo la configuración de la base de datos.
+│   ├── urls.py              # Archivo de configuración de URLs del proyecto.
+│   ├── wsgi.py              # Configuración para la implementación del proyecto con un servidor WSGI.
+│   └── asgi.py
+├── tasks/
+│   ├── __init__.py
+│   ├── admin.py
+│   ├── apps.py
+│   ├── models.py            # Define el modelo de datos para las tareas.
+│   ├── tests.py
+│   ├── views.py             # Contiene las vistas que manejan la lógica de la aplicación.
+│   ├── urls.py              # Configuración de URLs específicas para la aplicación de tareas.
+│   └── templates/
+│       └── tareas/
+│           ├── index.html       # Plantilla para la vista principal de la aplicacion.
+│           └── edit_task.html   # Plantilla para editar tareas existentes.
+├── requirements.txt          # Lista de dependencias del proyecto.
+└── README.md                 # Documentación del proyecto.
+```
+
+## Tecnologías Utilizadas
+
+- **Python**: Lenguaje de programación principal del proyecto.
+- **Django**: Framework web utilizado para el desarrollo de la aplicación.
+- **PostgreSQL**: Sistema de gestión de base de datos relacional utilizado para almacenar las tareas.
+- **Bootstrap**: Framework front-end utilizado para el diseño y la interfaz de usuario del proyecto.
+- **HTML y CSS**: Utilizados para la estructura y el estilo de las plantillas del proyecto.
+
+
+- Desarrollado por [Francisco](https://github.com/FrankSkep).
