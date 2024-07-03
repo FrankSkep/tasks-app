@@ -1,6 +1,6 @@
-# Django To-Do List Application
+# Django Tasks App Application
 
-Aplicacion web de lista de tareas desarrollada con Django. La aplicación permite agregar, ver, editar y eliminar tareas. Utiliza una base de datos PostgreSQL para gestionar las tareas.
+Aplicacion web de lista de tareas desarrollada con Django. Utiliza una base de datos PostgreSQL para gestionar las tareas.
 
 
 ## Características
@@ -73,7 +73,7 @@ Aplicacion web de lista de tareas desarrollada con Django. La aplicación permit
 ## Estructura del proyecto
 
 ```plaintext
-lista-de-tareas/
+Aplicacion/
 ├── manage.py                # Script de Django para administrar el proyecto.
 ├── django_project/
 │   ├── __init__.py
@@ -91,8 +91,10 @@ lista-de-tareas/
 │   ├── urls.py              # Configuración de URLs específicas para la aplicación de tareas.
 │   └── templates/
 │       └── tareas/
-│           ├── index.html       # Plantilla para la vista principal de la aplicacion.
+│           ├── index.html       # Plantilla para la vista principal de la aplicación.
 │           └── edit_task.html   # Plantilla para editar tareas existentes.
+├── static/
+│   └── main.css             # Archivo CSS principal para estilos del proyecto.
 ├── requirements.txt          # Lista de dependencias del proyecto.
 └── README.md                 # Documentación del proyecto.
 ```
@@ -106,4 +108,4 @@ lista-de-tareas/
 - **HTML y CSS**: Utilizados para la estructura y el estilo de las plantillas del proyecto.
 
 
-- Desarrollado por [Francisco](https://github.com/FrankSkep).
+Desarrollado por [Francisco](https://github.com/FrankSkep).
