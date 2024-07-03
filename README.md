@@ -16,14 +16,14 @@ Aplicacion web de lista de tareas desarrollada con Django. Utiliza una base de d
 - Python 3.x
 - Django 5.x o superior
 - PostgreSQL
-- psycopg2-binary (para la conexión con PostgreSQL)
+- psycopg2 (para la conexión con PostgreSQL)
 
 ## Instalación
 
 1. Clona este repositorio:
     ```sh
     git clone https://github.com/FrankSkep/Tasks-App
-    cd django-todo-list
+    cd Tasks-App
     ```
 
 2. Crea un entorno virtual e instálalo:
