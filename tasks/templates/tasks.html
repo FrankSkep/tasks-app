@@ -1,0 +1,51 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{% static 'main.css' %}">
+    <title>Tasks App</title>
+</head>
+<body>
+    <div class="container mt-5">
+        <div class="text-center mb-4">
+            <h1 class="display-4">Gestor de Tareas</h1>
+        </div>
+
+        <div class="card shadow p-4 mb-5 bg-light rounded">
+            <form action="{% url 'create_task' %}" method="POST">
+                {% csrf_token %}
+                <div class="mb-3">
+                    <label for="title" class="form-label">Título de la tarea</label>
+                    <input type="text" id="title" name="title" class="form-control" placeholder="Escribe el título" required>
+                </div>
+                <div class="mb-3">
+                    <label for="description" class="form-label">Descripción</label>
+                    <textarea id="description" name="description" class="form-control" rows="3" placeholder="Escribe la descripción" required></textarea>
+                </div>
+                <button class="btn btn-primary w-100">Guardar</button>
+            </form>
+        </div>
+
+        {% for task in tasks %}
+            <div class="card mb-3 shadow-sm task-card">
+                <div class="card-body">
+                    <h4 class="card-title text-primary">{{ task.title }}</h4>
+                    <p class="card-text">{{ task.description }}</p>
+                    <div class="d-flex justify-content-end">
+                        <form action="{% url 'delete_task' task.id %}" method="POST">
+                            {% csrf_token %}
+                            <button class="btn btn-danger">Eliminar</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        {% empty %}
+            <h2 class="text-center text-muted">No hay tareas.</h2>
+        {% endfor %}
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
