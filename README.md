@@ -1,4 +1,4 @@
-# Django Tasks App
+# <h1 align="center">Tasks App</h1>
 
 Aplicacion web de lista de tareas desarrollada con Django. Utiliza una base de datos PostgreSQL para gestionar las tareas.
 
