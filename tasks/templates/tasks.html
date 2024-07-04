@@ -7,12 +7,6 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="{% static 'main.css' %}">
     <title>Tasks App</title>
-    <style>
-        h1.display-4 {
-            background-color: black;
-            color: white;
-        }
-    </style>
 </head>
 <body>
     <div class="container mt-5">
@@ -52,9 +46,12 @@
                             <div class="d-flex justify-content-end">
                                 
                                 <!-- Editar tarea -->
-                                <a href="{% url 'edit_task' task.id %}" class="btn btn-warning me-2">Editar</a>
-                                <!-- Eliminar tarea -->
+                                <form action="{% url 'edit_task' task.id %}" method="get">
+                                    {% csrf_token %}
+                                    <button class="btn btn-primary me-2">Editar</button>
+                                </form>
 
+                                <!-- Eliminar tarea -->
                                 <form action="{% url 'delete_task' task.id %}" method="POST" class="d-inline">
                                     {% csrf_token %}
                                     <button class="btn btn-danger">Eliminar</button>
