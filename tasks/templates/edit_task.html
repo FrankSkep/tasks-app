@@ -11,13 +11,13 @@
             <div class="mb-3">
                 <label for="id_title" class="form-label">Title:</label>
                 <input type="text" id="id_title" name="title" class="form-control"
-                value="{{ form.title.value|default_if_none:'' }}" placeholder="Escribe el título" required>
+                value="{{ form.title.value|default_if_none:'' }}" placeholder="Write a title" required>
             </div>
     
             <div class="mb-3">
                 <label for="id_description" class="form-label">Description:</label>
                 <textarea id="id_description" name="description" class="form-control" rows="3"
-                 placeholder="Escribe la descripción" required>
+                 placeholder="Write a description" required>
                  {{ form.description.value|default_if_none:'' }}</textarea>
             </div>
             <button type="submit" class="btn btn-primary">Save changes</button>
