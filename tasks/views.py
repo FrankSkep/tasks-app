@@ -51,7 +51,10 @@ def edit_task(request, task_id):
 def task_completed(request, task_id):
     task = get_object_or_404(Task, id=task_id)
     
-    task.completed = True # Marca completada
+    if not task.completed:
+        task.completed = True # Marca completada
+    else:
+        task.completed = False # Marca como pendiente
     task.save()
     
     return redirect('/tasks/')

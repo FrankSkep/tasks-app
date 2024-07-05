@@ -11,9 +11,12 @@ Aplicacion web de lista de tareas desarrollada con Django, y base de datos Postg
 ## Características
 
 - **Agregar Tareas**: Permite a los usuarios agregar nuevas tareas a la lista.
-- **Ver Tareas**: Los usuarios pueden ver todas las tareas en la lista.
-- **Editar Tareas**: Permite a los usuarios editar las tareas existentes.
-- **Eliminar Tareas**: Los usuarios pueden eliminar las tareas de la lista.
+- **Visualización de Tareas**: Los usuarios pueden ver todas las tareas en la lista.
+- **Edición de Tareas**: Permite a los usuarios editar las tareas existentes.
+- **Eliminación de Tareas**: Los usuarios pueden eliminar las tareas de la lista.
+- **Marcar como Completada**: Los usuarios pueden marcar una tarea como completada o volver a marcarla como pendiente según sea necesario.
+- **Filtrado de Tareas**: Los usuarios pueden filtrar las tareas segun su estado (Completada o Pendiente), mostrando solo aquellas que necesitas ver en un momento dado.
+- **Indicador de estado**: Podras visualizar el estado de cada tarea, en la esquina inferior izquierda, facilitando la identificación visual rápida de su estado actual.
 
 ## Requisitos
 
