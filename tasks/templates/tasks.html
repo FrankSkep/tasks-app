@@ -10,7 +10,7 @@
 </head>
 <body>
     <header class="text-center mb-5">
-        <h1 class="" style="color: rgb(0, 0, 0); border-radius: 10px; font-size:3.2rem;">Tasks</h1>
+        <h1 class="task-title" style="color: rgb(0, 0, 0); border-radius: 10px; font-size:3.2rem;">Tasks</h1>
     </header>
     <div class="container mt-5">
         {% block content %}
@@ -43,13 +43,11 @@
                                     <input class="form-check-input" type="checkbox" id="completed" name="completed" {% if request.GET.completed %}checked{% endif %}>
                                     <label class="form-check-label" for="completed">Completed tasks</label>
                                 </div>
-                    
                                 <div class="form-check">
                                     <input class="form-check-input" type="checkbox" id="pending" name="pending" {% if request.GET.pending %}checked{% endif %}>
                                     <label class="form-check-label" for="pending">Pending tasks</label>
                                 </div>
                             </div>
-                
                             <button type="submit" class="btn btn-primary w-50">Filter</button>
                         </form>
                     </div>
@@ -63,36 +61,23 @@
                         <div class="card-body">
                             <h4 class="card-title text-primary">{{ task.title }}</h4>
                             <p class="card-text">{{ task.description }}</p>
-                            
-                            <!-- Contenedor d-flex para alinear badge y botones -->
                             <div class="d-flex align-items-center">
-                                
-                                <!-- Badges para mostrar estado de la tarea -->
                                 {% if task.completed %}
                                     <span class="badge bg-success text-white me-auto">Completed</span>
                                 {% else %}
                                     <span class="badge bg-warning text-dark me-auto">Pending</span>
                                 {% endif %}
-
-                                <!-- Botones alineados a la derecha -->
                                 <div class="d-flex">
-                                    <!-- Marcar como completada o pendiente -->
                                     <form action="{% url 'task_completed' task.id %}" method="POST">
                                         {% csrf_token %}
-                                        {% if task.completed %}
-                                        <button type="submit" class="btn btn-warning me-2">Pending</button>
-                                        {% else %}
-                                        <button type="submit" class="btn btn-success me-2">Completed</button>
-                                        {% endif %}
+                                        <button type="submit" class="btn btn-{% if task.completed %}warning{% else %}success{% endif %} me-2">
+                                            {% if task.completed %}Pending{% else %}Completed{% endif %}
+                                        </button>
                                     </form>
-
-                                    <!-- Editar tarea -->
                                     <form action="{% url 'edit_task' task.id %}" method="GET">
                                         {% csrf_token %}
                                         <button type="submit" class="btn btn-primary me-2">Edit</button>
                                     </form>
-
-                                    <!-- Eliminar tarea -->
                                     <form action="{% url 'delete_task' task.id %}" method="POST" class="d-inline">
                                         {% csrf_token %}
                                         <button type="submit" class="btn btn-danger">Delete</button>
