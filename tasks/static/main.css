@@ -3,6 +3,12 @@ body {
     color: #333; /* Color de texto más oscuro para mejor legibilidad */
 }
 
+header {
+    background-color: rgb(209, 209, 209);
+    padding: 5px;
+    margin: 20px;
+}
+
 .task-card {
     transition: transform 0.2s; /* Transición suave al pasar el cursor */
 }

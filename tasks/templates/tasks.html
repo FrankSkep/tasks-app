@@ -9,29 +9,28 @@
     <title>Tasks App</title>
 </head>
 <body>
+    <header class="text-center mb-5">
+        <h1 class="" style="color: rgb(0, 0, 0); border-radius: 10px; font-size:3.2rem;">Tasks</h1>
+    </header>
     <div class="container mt-5">
-        <div class="text-center mb-5">
-            <h1 class="" style="background-color: rgb(214, 214, 214); color: rgb(0, 0, 0); border-radius: 10px; font-size:3.2rem;">Gestor de Tareas</h1>
-        </div>
-        
         {% block content %}
         <div class="row">
             <!-- Formulario de agregar tarea -->
             <div class="col-md-5">
                 <div class="card shadow p-4 mb-5 bg-light rounded">
-                    <h3 class="text-center">Agregar tarea</h3>
+                    <h3 class="text-center">Add new task</h3>
                     <hr>
                     <form action="{% url 'create_task' %}" method="POST">
                         {% csrf_token %}
                         <div class="mb-3">
-                            <label for="title" class="form-label">Título</label>
+                            <label for="title" class="form-label">Title:</label>
                             <input type="text" id="title" name="title" class="form-control" placeholder="Escribe el título" required>
                         </div>
                         <div class="mb-3">
-                            <label for="description" class="form-label">Descripción</label>
+                            <label for="description" class="form-label">Description:</label>
                             <textarea id="description" name="description" class="form-control" rows="3" placeholder="Escribe la descripción" required></textarea>
                         </div>
-                        <button class="btn btn-primary w-100">Guardar</button>
+                        <button class="btn btn-success w-100">Save</button>
                     </form>
                 </div>
             </div>
@@ -46,21 +45,21 @@
                             <div class="d-flex justify-content-end">
                                 
                                 <!-- Editar tarea -->
-                                <form action="{% url 'edit_task' task.id %}" method="get">
+                                <form action="{% url 'edit_task' task.id %}" method="GET">
                                     {% csrf_token %}
-                                    <button class="btn btn-primary me-2">Editar</button>
+                                    <button class="btn btn-primary me-2">Edit</button>
                                 </form>
 
                                 <!-- Eliminar tarea -->
                                 <form action="{% url 'delete_task' task.id %}" method="POST" class="d-inline">
                                     {% csrf_token %}
-                                    <button class="btn btn-danger">Eliminar</button>
+                                    <button class="btn btn-danger">Delete</button>
                                 </form>
                             </div>
                         </div>
                     </div>
                 {% empty %}
-                    <h2 class="text-center text-muted">No hay tareas.</h2>
+                    <h2 class="text-center text-muted text-danger">No tasks.</h2>
                 {% endfor %}
             </div>
         </div>

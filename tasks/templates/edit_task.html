@@ -6,18 +6,21 @@
         {% csrf_token %}
         <!-- Formulario -->
         <div class="card shadow p-4 mb-4 bg-light rounded">
-            <h3 class="text-center">Editar tarea</h3>
+            <h3 class="text-center">Edit task</h3>
             <hr>
             <div class="mb-3">
-                <label for="id_title" class="form-label">Título</label>
-                <input type="text" id="id_title" name="title" class="form-control" value="{{ form.title.value|default_if_none:'' }}" placeholder="Escribe el título" required>
+                <label for="id_title" class="form-label">Title:</label>
+                <input type="text" id="id_title" name="title" class="form-control"
+                value="{{ form.title.value|default_if_none:'' }}" placeholder="Escribe el título" required>
             </div>
     
             <div class="mb-3">
-                <label for="id_description" class="form-label">Descripción</label>
-                <textarea id="id_description" name="description" class="form-control" rows="3" placeholder="Escribe la descripción" required>{{ form.description.value|default_if_none:'' }}</textarea>
+                <label for="id_description" class="form-label">Description:</label>
+                <textarea id="id_description" name="description" class="form-control" rows="3"
+                 placeholder="Escribe la descripción" required>
+                 {{ form.description.value|default_if_none:'' }}</textarea>
             </div>
-            <button type="submit" class="btn btn-primary">Guardar Cambios</button>
+            <button type="submit" class="btn btn-primary">Save changes</button>
         </div>
     </form>
 </div>
