@@ -86,7 +86,7 @@ Tasks-App/
 │   ├── wsgi.py            # Configuración para la implementación del proyecto con un servidor WSGI.
 │   └── asgi.py
 ├── tasks/
-│   ├── migrations/        # Contiene las migraciones de bd necesarias para el funcionamiento
+│   ├── migrations/        # Archivos que gestionan los cambios en el esquema de la base de datos .
 │   ├── __init__.py
 │   ├── admin.py
 │   ├── apps.py
