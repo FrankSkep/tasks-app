@@ -4,7 +4,7 @@ from .forms import TaskForm
 
 # Mostrar todas las tareas
 def list_tasks(request):
-    tasks = Task.objects.all()  # Obtener lista de todos los objetos, orm
+    tasks = Task.objects.all()  # Obtener lista de todos los objetos
     return render(request, 'tasks.html', {"tasks": tasks})
 
 # Crear una tarea
