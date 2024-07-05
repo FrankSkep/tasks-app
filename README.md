@@ -1,6 +1,6 @@
 # <h1 align="center">Tasks App</h1>
 
-Aplicacion web de lista de tareas desarrollada con Django, y base de datos PostgreSQL para almacenar y gestionar las tareas.
+Aplicacion web de lista de tareas desarrollada con Django, y cuenta con una base de datos PostgreSQL para almacenar y gestionar las tareas.
 
 ## <h2 align="center">Interfaz principal:</h2>
 ![ImagenInterfaz](https://raw.githubusercontent.com/FrankSkep/Tasks-App/main/tasks/static/preview/main_view.png)
