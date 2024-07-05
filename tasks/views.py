@@ -6,10 +6,11 @@ from .forms import TaskForm
 def list_tasks(request):
     tasks = Task.objects.all()  # Obtener todas las tareas
     
-    # Filtrar segun los checkboxes seleccionados
+    # Obtener valor checkbox
     completed = request.GET.get('completed')
     pending = request.GET.get('pending')
     
+    # Filtrado
     if completed and not pending:
         tasks = tasks.filter(completed=True)
     if pending and not completed:
