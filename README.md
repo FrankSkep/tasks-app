@@ -3,9 +3,9 @@
 Aplicacion web de lista de tareas desarrollada con Django, y base de datos PostgreSQL para almacenar y gestionar las tareas.
 
 ## <h2 align="center">Interfaz principal:</h2>
-![ImagenInterfaz](https://raw.githubusercontent.com/FrankSkep/Tasks-App/main/tasks/static/images/interface1.png)
+![ImagenInterfaz](https://raw.githubusercontent.com/FrankSkep/Tasks-App/main/tasks/static/preview/main.png)
 ## <h2 align="center">Interfaz de edicion:</h2>
-![ImagenEdit](https://raw.githubusercontent.com/FrankSkep/Tasks-App/main/tasks/static/images/interface2.png)
+![ImagenEdit](https://raw.githubusercontent.com/FrankSkep/Tasks-App/main/tasks/static/preview/edit_task.png)
 
 
 ## Características
