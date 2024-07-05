@@ -78,30 +78,30 @@ Aplicacion web de lista de tareas desarrollada con Django, y base de datos Postg
 
 ```plaintext
 Tasks-App/
-├── manage.py                # Script de Django para administrar el proyecto.
+├── manage.py              # Script de Django para administrar el proyecto.
 ├── django_project/
 │   ├── __init__.py
-│   ├── settings.py          # Configuraciones del proyecto Django, incluyendo la configuración de la base de datos.
-│   ├── urls.py              # Archivo de configuración de URLs del proyecto.
-│   ├── wsgi.py              # Configuración para la implementación del proyecto con un servidor WSGI.
+│   ├── settings.py        # Configuraciones del proyecto Django, incluyendo la configuración de la base de datos.
+│   ├── urls.py            # Archivo de configuración de URLs del proyecto.
+│   ├── wsgi.py            # Configuración para la implementación del proyecto con un servidor WSGI.
 │   └── asgi.py
 ├── tasks/
-│   ├── migrations/          # Contiene las migraciones de bd necesarias para el funcionamiento
+│   ├── migrations/        # Contiene las migraciones de bd necesarias para el funcionamiento
 │   ├── __init__.py
 │   ├── admin.py
 │   ├── apps.py
-│   ├── models.py            # Define el modelo de datos para las tareas.
+│   ├── models.py          # Define el modelo de datos para las tareas.
 │   ├── tests.py
-│   ├── views.py             # Contiene las vistas que manejan la lógica de la aplicación.
-│   ├── urls.py              # Configuración de URLs específicas para la aplicación de tareas.
+│   ├── views.py           # Contiene las vistas que manejan la lógica de la aplicación.
+│   ├── urls.py            # Configuración de URLs específicas para la aplicación de tareas.
 │   └── templates/
 │   │    └── tareas/
 │   │        ├── index.html       # Plantilla para la vista principal de la aplicación.
 │   │        └── edit_task.html   # Plantilla para la vista de edicion de tareas.
 │   └── static/
-│        └── main.css         # Archivo CSS principal para estilos del proyecto.
-├── requirements.txt          # Lista de dependencias del proyecto.
-└── README.md                 # Documentación del proyecto.
+│        └── main.css       # Archivo CSS principal para estilos del proyecto.
+├── requirements.txt        # Lista de dependencias del proyecto.
+└── README.md               # Documentación del proyecto.
 ```
 
 ## Tecnologías Utilizadas
