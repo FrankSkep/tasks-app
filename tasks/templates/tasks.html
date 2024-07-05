@@ -33,6 +33,27 @@
                         <button class="btn btn-success w-100">Save</button>
                     </form>
                 </div>
+
+                <!-- Filtro -->
+                <div class="card shadow mb-4 bg-light rounded">
+                    <div class="card-body">
+                        <form method="GET" class="d-flex justify-content-between align-items-center">
+                            <div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="completed" name="completed" {% if request.GET.completed %}checked{% endif %}>
+                                    <label class="form-check-label" for="completed">Completed tasks</label>
+                                </div>
+                    
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="pending" name="pending" {% if request.GET.pending %}checked{% endif %}>
+                                    <label class="form-check-label" for="pending">Pending tasks</label>
+                                </div>
+                            </div>
+                
+                            <button type="submit" class="btn btn-primary w-50">Filter</button>
+                        </form>
+                    </div>
+                </div>
             </div>
 
             <!-- Lista de tareas -->
@@ -42,19 +63,35 @@
                         <div class="card-body">
                             <h4 class="card-title text-primary">{{ task.title }}</h4>
                             <p class="card-text">{{ task.description }}</p>
-                            <div class="d-flex justify-content-end">
+                            
+                            <!-- Contenedor d-flex para alinear badge y botones -->
+                            <div class="d-flex align-items-center">
                                 
-                                <!-- Editar tarea -->
-                                <form action="{% url 'edit_task' task.id %}" method="GET">
-                                    {% csrf_token %}
-                                    <button class="btn btn-primary me-2">Edit</button>
-                                </form>
+                                <!-- Badges para mostrar estado de la tarea -->
+                                {% if task.completed %}
+                                    <span class="badge bg-success text-white me-auto">Completed</span>
+                                {% else %}
+                                    <span class="badge bg-warning text-dark me-auto">Pending</span>
+                                {% endif %}
 
-                                <!-- Eliminar tarea -->
-                                <form action="{% url 'delete_task' task.id %}" method="POST" class="d-inline">
-                                    {% csrf_token %}
-                                    <button class="btn btn-danger">Delete</button>
-                                </form>
+                                <!-- Botones alineados a la derecha -->
+                                <div class="d-flex">
+                                    <!-- Marcar como completada -->
+                                    <form action="{% url 'task_completed' task.id %}" method="POST">
+                                        {% csrf_token %}
+                                        <button type="submit" class="btn btn-success me-2">Completed</button>
+                                    </form>
+                                    <!-- Editar tarea -->
+                                    <form action="{% url 'edit_task' task.id %}" method="GET">
+                                        {% csrf_token %}
+                                        <button type="submit" class="btn btn-primary me-2">Edit</button>
+                                    </form>
+                                    <!-- Eliminar tarea -->
+                                    <form action="{% url 'delete_task' task.id %}" method="POST" class="d-inline">
+                                        {% csrf_token %}
+                                        <button type="submit" class="btn btn-danger">Delete</button>
+                                    </form>
+                                </div>
                             </div>
                         </div>
                     </div>

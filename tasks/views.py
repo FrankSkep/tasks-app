@@ -4,7 +4,17 @@ from .forms import TaskForm
 
 # Mostrar todas las tareas
 def list_tasks(request):
-    tasks = Task.objects.all()  # Obtener lista de todos los objetos
+    tasks = Task.objects.all()  # Obtener todas las tareas
+    
+    # Filtrar segun los checkboxes seleccionados
+    completed = request.GET.get('completed')
+    pending = request.GET.get('pending')
+    
+    if completed and not pending:
+        tasks = tasks.filter(completed=True)
+    if pending and not completed:
+        tasks = tasks.filter(completed=False)
+    
     return render(request, 'tasks.html', {"tasks": tasks})
 
 # Crear una tarea
@@ -35,3 +45,12 @@ def edit_task(request, task_id):
         form = TaskForm(instance=task)
 
     return render(request, 'edit_task.html', {'form': form})
+
+# Marcar una tarea como completada
+def task_completed(request, task_id):
+    task = get_object_or_404(Task, id=task_id)
+    
+    task.completed = True # Marca completada
+    task.save()
+    
+    return redirect('/tasks/')
