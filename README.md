@@ -1,6 +1,6 @@
 # <h1 align="center">Tasks App</h1>
 
-Aplicacion web de lista de tareas desarrollada con Django. Utiliza una base de datos PostgreSQL para gestionar las tareas.
+Aplicacion web de lista de tareas desarrollada con Django, y base de datos PostgreSQL para almacenar y gestionar las tareas.
 
 ## <h2 align="center">Interfaz principal:</h2>
 ![ImagenInterfaz](https://raw.githubusercontent.com/FrankSkep/Tasks-App/main/tasks/static/images/interface1.png)
@@ -20,7 +20,7 @@ Aplicacion web de lista de tareas desarrollada con Django. Utiliza una base de d
 - Python 3.x
 - Django 5.x o superior
 - PostgreSQL
-- psycopg2 (para la conexión con PostgreSQL)
+- psycopg2 (para la conexión de Django con PostgreSQL)
 
 ## Instalación
 
@@ -43,15 +43,15 @@ Aplicacion web de lista de tareas desarrollada con Django. Utiliza una base de d
 
 4. Configura la base de datos PostgreSQL.
     - Crea una base de datos en PostgreSQL.
-    - Configura las credenciales de la base de datos en `settings.py`:
+    - Configura tus credenciales de la base de datos en `settings.py`:
 
     ```python
     DATABASES = {
         'default': {
             'ENGINE': 'django.db.backends.postgresql',
             'NAME': 'nombre_de_tu_base_de_datos',
-            'USER': 'tu_usuario',
-            'PASSWORD': 'tu_contraseña',
+            'USER': 'tu_usuario_postgres',
+            'PASSWORD': 'tu_contraseña_postgres',
             'HOST': 'localhost',
             'PORT': '5432',
         }
@@ -60,7 +60,6 @@ Aplicacion web de lista de tareas desarrollada con Django. Utiliza una base de d
 
 5. Aplica las migraciones para configurar la base de datos:
     ```sh
-    python manage.py makemigrations
     python manage.py migrate
     ```
 
@@ -87,6 +86,7 @@ Tasks-App/
 │   ├── wsgi.py              # Configuración para la implementación del proyecto con un servidor WSGI.
 │   └── asgi.py
 ├── tasks/
+│   ├── migrations/          # Contiene las migraciones de bd necesarias para el funcionamiento
 │   ├── __init__.py
 │   ├── admin.py
 │   ├── apps.py
@@ -95,11 +95,11 @@ Tasks-App/
 │   ├── views.py             # Contiene las vistas que manejan la lógica de la aplicación.
 │   ├── urls.py              # Configuración de URLs específicas para la aplicación de tareas.
 │   └── templates/
-│       └── tareas/
-│           ├── index.html       # Plantilla para la vista principal de la aplicación.
-│           └── edit_task.html   # Plantilla para editar tareas existentes.
-├── static/
-│   └── main.css             # Archivo CSS principal para estilos del proyecto.
+│   │    └── tareas/
+│   │        ├── index.html       # Plantilla para la vista principal de la aplicación.
+│   │        └── edit_task.html   # Plantilla para la vista de edicion de tareas.
+│   └── static/
+│        └── main.css         # Archivo CSS principal para estilos del proyecto.
 ├── requirements.txt          # Lista de dependencias del proyecto.
 └── README.md                 # Documentación del proyecto.
 ```
@@ -108,7 +108,7 @@ Tasks-App/
 
 - **Python**: Lenguaje de programación principal del proyecto.
 - **Django**: Framework web utilizado para el desarrollo de la aplicación.
-- **PostgreSQL**: Sistema de gestión de base de datos relacional utilizado para almacenar las tareas.
+- **PostgreSQL**: Sistema de gestión de base de datos relacional utilizado para almacenar y gestionar las tareas.
 - **Bootstrap**: Framework front-end utilizado para el diseño y la interfaz de usuario del proyecto.
 - **HTML y CSS**: Utilizados para la estructura y el estilo de las plantillas del proyecto.
 
