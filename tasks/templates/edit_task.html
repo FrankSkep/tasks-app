@@ -2,26 +2,30 @@
 
 {% block content %}
 <div class="container mt-5">
-    <form method="POST">
-        {% csrf_token %}
-        <!-- Formulario -->
-        <div class="card shadow p-4 mb-4 bg-light rounded">
-            <h3 class="text-center">Edit task</h3>
-            <hr>
-            <div class="mb-3">
-                <label for="id_title" class="form-label">Title:</label>
-                <input type="text" id="id_title" name="title" class="form-control"
-                value="{{ form.title.value|default_if_none:'' }}" placeholder="Write a title" required>
-            </div>
-    
-            <div class="mb-3">
-                <label for="id_description" class="form-label">Description:</label>
-                <textarea id="id_description" name="description" class="form-control" rows="3"
-                 placeholder="Write a description" required>
-                 {{ form.description.value|default_if_none:'' }}</textarea>
-            </div>
-            <button type="submit" class="btn btn-success">Save changes</button>
+    <div class="row justify-content-center">
+        <div class="col-md-6"> <!-- Puedes ajustar el tamaño cambiando el número de columnas -->
+            <form method="POST">
+                {% csrf_token %}
+                <!-- Formulario -->
+                <div class="card shadow p-4 mb-4 bg-light rounded">
+                    <h3 class="text-center">Edit task</h3>
+                    <hr>
+                    <div class="mb-3">
+                        <label for="id_title" class="form-label">Title:</label>
+                        <input type="text" id="id_title" name="title" class="form-control"
+                        value="{{ form.title.value|default_if_none:'' }}" placeholder="Write a title" required>
+                    </div>
+            
+                    <div class="mb-3">
+                        <label for="id_description" class="form-label">Description:</label>
+                        <textarea id="id_description" name="description" class="form-control" rows="3"
+                         placeholder="Write a description" required>
+                         {{ form.description.value|default_if_none:'' }}</textarea>
+                    </div>
+                    <button type="submit" class="btn btn-success">Save changes</button>
+                </div>
+            </form>
         </div>
-    </form>
+    </div>
 </div>
 {% endblock %}

@@ -62,18 +62,23 @@
                             <h4 class="card-title text-primary">{{ task.title }}</h4>
                             <p class="card-text">{{ task.description }}</p>
                             <div class="d-flex align-items-center">
-                                {% if task.completed %}
-                                    <span class="badge bg-success text-white me-auto">Completed</span>
-                                {% else %}
-                                    <span class="badge bg-warning text-dark me-auto">Pending</span>
-                                {% endif %}
+                                
+                                <form action="{% url 'task_completed' task.id %}" method="POST">
+                                    {% csrf_token %}
+                                    <div class="form-check me-auto">
+                                        <input class="form-check-input" type="checkbox" id="task-{{ task.id }}" name="completed" {% if task.completed %}checked{% endif %} onchange="this.form.submit()">
+                                        <label class="form-check-label" for="task-{{ task.id }}">
+                                            {% if task.completed %}
+                                                <span class="badge bg-success text-white">Completed</span>
+                                            {% else %}
+                                                <span class="badge bg-warning text-dark">Pending</span>
+                                            {% endif %}
+                                        </label>
+                                    </div>
+                                </form>
+                                <span class="me-auto"></span>
+                                
                                 <div class="d-flex">
-                                    <form action="{% url 'task_completed' task.id %}" method="POST">
-                                        {% csrf_token %}
-                                        <button type="submit" class="btn btn-{% if task.completed %}warning{% else %}success{% endif %} me-2">
-                                            {% if task.completed %}Pending{% else %}Completed{% endif %}
-                                        </button>
-                                    </form>
                                     <form action="{% url 'edit_task' task.id %}" method="GET">
                                         {% csrf_token %}
                                         <button type="submit" class="btn btn-primary me-2">Edit</button>
