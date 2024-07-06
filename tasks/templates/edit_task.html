@@ -3,7 +3,7 @@
 {% block content %}
 <div class="container mt-5">
     <div class="row justify-content-center">
-        <div class="col-md-6"> <!-- Puedes ajustar el tamaño cambiando el número de columnas -->
+        <div class="col-md-6"> <!-- Ajustar el tamaño cambiando número de columnas -->
             <form method="POST">
                 {% csrf_token %}
                 <!-- Formulario -->
@@ -19,8 +19,7 @@
                     <div class="mb-3">
                         <label for="id_description" class="form-label">Description:</label>
                         <textarea id="id_description" name="description" class="form-control" rows="3"
-                         placeholder="Write a description" required>
-                         {{ form.description.value|default_if_none:'' }}</textarea>
+                         placeholder="Write a description" required>{{ form.description.value|default_if_none:'' }}</textarea>
                     </div>
                     <button type="submit" class="btn btn-success">Save changes</button>
                 </div>
