@@ -115,5 +115,12 @@ Tasks-App/
 - **Bootstrap**: Framework front-end utilizado para el diseño y la interfaz de usuario del proyecto.
 - **HTML y CSS**: Utilizados para la estructura y el estilo de las plantillas del proyecto.
 
+## Desarrollador
 
-Desarrollado por [Francisco](https://github.com/FrankSkep).
+[FrankSkep](https://github.com/FrankSkep).
+
+## Licencia
+
+**Este proyecto está licenciado bajo la [GNU Affero General Public License v3.0](https://www.gnu.org/licenses/agpl-3.0.html).**
+
+© 2024 FrankSkep. Para más detalles, consulte el archivo completo [LICENSE](LICENSE).
