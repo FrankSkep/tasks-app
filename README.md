@@ -3,7 +3,7 @@
 Aplicación web de lista de tareas desarrollada con Django. Utiliza una base de datos PostgreSQL para almacenar y gestionar las tareas.
 
 ## <h2 align="center">Pagina Principal:</h2>
-![ImagenInterfaz](tasks\static\preview\main.png)
+![ImagenInterfaz](tasks/static/preview/main.png)
 
 ## Características
 
