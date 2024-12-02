@@ -11,6 +11,13 @@
 <body>
     <header class="text-center mb-5">
         <h1 class="task-title" style="color: rgb(0, 0, 0); border-radius: 10px; font-size:3.2rem;">Tasks</h1>
+        <!-- Logout -->
+        {% if user.is_authenticated %}
+        <form action="{% url 'logout' %}" method="POST" class="d-inline">
+            {% csrf_token %}
+            <button type="submit" class="btn btn-danger float-end">Logout</button>
+        </form>
+        {% endif %}
     </header>
     <div class="container mt-5">
         {% block content %}

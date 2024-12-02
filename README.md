@@ -1,12 +1,9 @@
 # <h1 align="center">Tasks App</h1>
 
-Aplicacion web de lista de tareas desarrollada con Django. Cuenta con una base de datos PostgreSQL para almacenar y gestionar las tareas.
+Aplicación web de lista de tareas desarrollada con Django. Utiliza una base de datos PostgreSQL para almacenar y gestionar las tareas.
 
-## <h2 align="center">Interfaz principal:</h2>
-![ImagenInterfaz](https://raw.githubusercontent.com/FrankSkep/Tasks-App/main/tasks/static/preview/main.png)
-## <h2 align="center">Interfaz de edicion:</h2>
-![ImagenEdit](https://raw.githubusercontent.com/FrankSkep/Tasks-App/main/tasks/static/preview/edit.png)
-
+## <h2 align="center">Pagina Principal:</h2>
+![ImagenInterfaz](tasks\static\preview\main.png)
 
 ## Características
 
@@ -15,8 +12,10 @@ Aplicacion web de lista de tareas desarrollada con Django. Cuenta con una base d
 - **Edición de Tareas**: Permite a los usuarios editar las tareas existentes.
 - **Eliminación de Tareas**: Los usuarios pueden eliminar las tareas de la lista.
 - **Marcar como Completada**: Los usuarios pueden marcar una tarea como completada o volver a marcarla como pendiente según sea necesario.
-- **Filtrado de Tareas**: Los usuarios pueden filtrar las tareas segun su estado (Completada o Pendiente), mostrando solo aquellas que necesitas ver en un momento dado.
-- **Indicador de estado**: Podras visualizar el estado de cada tarea, en la esquina inferior izquierda, facilitando la identificación visual rápida de su estado actual.
+- **Filtrado de Tareas**: Los usuarios pueden filtrar las tareas según su estado (Completada o Pendiente), mostrando solo aquellas que necesitan ver en un momento dado.
+- **Indicador de estado**: Podrás visualizar el estado de cada tarea, en la esquina inferior izquierda, facilitando la identificación visual rápida de su estado actual.
+- **Registro y Autenticación de Usuarios**: Los usuarios pueden registrarse, iniciar sesión y cerrar sesión.
+- **Redirección después de Login/Logout**: Redirección automática a la lista de tareas después de iniciar sesión y a la página de login después de cerrar sesión.
 
 ## Requisitos
 
@@ -29,8 +28,8 @@ Aplicacion web de lista de tareas desarrollada con Django. Cuenta con una base d
 
 1. Clona este repositorio:
     ```sh
-    git clone https://github.com/FrankSkep/Tasks-App
-    cd Tasks-App
+    git clone https://github.com/FrankSkep/tasks-app
+    cd tasks-app
     ```
 
 2. Crea un entorno virtual e instálalo:
@@ -52,9 +51,9 @@ Aplicacion web de lista de tareas desarrollada con Django. Cuenta con una base d
     DATABASES = {
         'default': {
             'ENGINE': 'django.db.backends.postgresql',
-            'NAME': 'nombre_de_tu_base_de_datos',
+            'NAME': 'tasksapp',
             'USER': 'tu_usuario_postgres',
-            'PASSWORD': 'tu_contraseña_postgres',
+            'PASSWORD': 'tu_password_postgres',
             'HOST': 'localhost',
             'PORT': '5432',
         }
@@ -63,49 +62,16 @@ Aplicacion web de lista de tareas desarrollada con Django. Cuenta con una base d
 
 5. Aplica las migraciones para configurar la base de datos:
     ```sh
+    python manage.py makemigrations
     python manage.py migrate
     ```
-
 
 6. Inicia el servidor de desarrollo:
     ```sh
     python manage.py runserver
     ```
 
-## Uso
-
-1. Abre tu navegador web y ve a `http://127.0.0.1:8000/tasks/`.
-2. Puedes agregar, ver, editar y eliminar tareas utilizando la interfaz de usuario.
-
-## Estructura del proyecto
-
-```plaintext
-Tasks-App/
-├── manage.py              # Script de Django para administrar el proyecto.
-├── django_project/
-│   ├── __init__.py
-│   ├── settings.py        # Configuraciones del proyecto Django, incluyendo la configuración de la base de datos.
-│   ├── urls.py            # Archivo de configuración de URLs del proyecto.
-│   ├── wsgi.py            # Configuración para la implementación del proyecto con un servidor WSGI.
-│   └── asgi.py
-├── tasks/
-│   ├── migrations/        # Archivos que gestionan los cambios en el esquema de la base de datos .
-│   ├── __init__.py
-│   ├── admin.py
-│   ├── apps.py
-│   ├── models.py          # Define el modelo de datos para las tareas.
-│   ├── tests.py
-│   ├── views.py           # Contiene las vistas que manejan la lógica de la aplicación.
-│   ├── urls.py            # Configuración de URLs específicas para la aplicación de tareas.
-│   └── templates/
-│   │    └── tareas/
-│   │        ├── index.html       # Plantilla para la vista principal de la aplicación.
-│   │        └── edit_task.html   # Plantilla para la vista de edicion de tareas.
-│   └── static/
-│        └── main.css       # Archivo CSS principal para estilos del proyecto.
-├── requirements.txt        # Lista de dependencias del proyecto.
-└── README.md               # Documentación del proyecto.
-```
+7. Abre tu navegador web y ve a `http://127.0.0.1:8000`.
 
 ## Tecnologías Utilizadas
 
@@ -123,4 +89,4 @@ Tasks-App/
 
 **[GNU Affero General Public License v3.0](https://www.gnu.org/licenses/agpl-3.0.html)**.  
 
-© 2024 FrankSkep. Consultar el archivo [LICENSE](LICENSE) para mas informacion.
+© 2024 FrankSkep. Consultar el archivo [LICENSE](LICENSE) para más información.
